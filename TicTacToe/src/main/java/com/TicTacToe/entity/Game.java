@@ -225,8 +225,11 @@ public class Game {
 	public boolean checkWinner(Board board, Move move) {
 		// go to each winning strategy and see if it has won with any of the followed strategy.
 		for(WinningStrategy ws: winningStrategy) {
-			if(ws.checkWinner(move.getPlayer(), board))
+			System.out.println("Came here in chk outside if!!" + ws.getClass().getName() );
+			if(ws.checkWinner(move, board)) {
+				System.out.println("Came here in chk!!");
 				return true;
+			}
 		}
 		return false;
 	}

@@ -39,12 +39,14 @@ public class Client {
 				gameController.displayBoard(game);
 			}
 			
-//			if(gameController.checkGameState(game).equals(GameState.DRAW)) {
-//				System.out.print("The game ended in DRAW ");
-//			}else if(gameController.checkGameState(game).equals(GameState.SUCCESS)) {
-//				Player player = gameController.getWinner(game);
-//				System.out.println("Winner is :: " + player.getName());
-//			}
+			System.out.println("The Game is Over!!");
+			
+			if(gameController.checkGameState(game).equals(GameState.DRAW)) {
+				System.out.print("The game ended in DRAW ");
+			}else if(gameController.checkGameState(game).equals(GameState.SUCCESS)) {
+				Player player = gameController.getWinner(game);
+				System.out.println("Winner is :: " + player.getName());
+			}
 			
 		}catch(Exception e) {
 			System.out.println("Game has stopped abruptly");
