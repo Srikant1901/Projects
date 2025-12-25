@@ -1,4 +1,4 @@
-package com.TicTacTow.exceptions;
+package com.TicTacToe.exceptions;
 
 public class InvalidPlayerCountException extends Exception {
 

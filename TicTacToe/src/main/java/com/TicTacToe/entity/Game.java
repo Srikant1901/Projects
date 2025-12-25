@@ -11,10 +11,10 @@ import java.util.stream.Collectors;
 import com.TicTacToe.enums.CellState;
 import com.TicTacToe.enums.GameState;
 import com.TicTacToe.enums.PlayerType;
+import com.TicTacToe.exceptions.DuplicateSymbolOptedException;
+import com.TicTacToe.exceptions.InvalidBotCountException;
+import com.TicTacToe.exceptions.InvalidPlayerCountException;
 import com.TicTacToe.strategies.winnning.WinningStrategy;
-import com.TicTacTow.exceptions.DuplicateSymbolOptedException;
-import com.TicTacTow.exceptions.InvalidBotCountException;
-import com.TicTacTow.exceptions.InvalidPlayerCountException;
 
 public class Game {
 	private Board board;
