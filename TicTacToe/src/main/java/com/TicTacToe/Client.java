@@ -2,6 +2,7 @@ package com.TicTacToe;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.TicTacToe.controller.GameController;
 import com.TicTacToe.entity.Bot;
@@ -18,6 +19,7 @@ import com.TicTacToe.strategies.winnning.WinningStrategy;
 
 public class Client {
 	public static void main(String[] args) throws Exception{
+		Scanner scanner = new Scanner(System.in);
 		GameController gameController = new GameController();
 		System.out.println(" Starting the game---> ");
 		try {
@@ -36,6 +38,11 @@ public class Client {
 			Game game = gameController.startGame(dimension, players, ws);
 			while(gameController.checkGameState(game).equals(GameState.IN_PROGRESS)) {
 				gameController.makeMove(game);
+				System.out.println("Do you want to undo your move (y/n) ? ");
+				String input = scanner.next();
+				if(input.equals("y")) {
+					gameController.undo(game);
+				}
 				gameController.displayBoard(game);
 			}
 			

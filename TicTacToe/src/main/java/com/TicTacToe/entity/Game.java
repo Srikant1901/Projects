@@ -234,4 +234,24 @@ public class Game {
 		return false;
 	}
 
+	public void undo() {
+		if(moves.size()==0) {
+			System.out.println("No moves has been done , cant undo!! ");
+			return;
+		}
+		
+		Move move = moves.get(moves.size() -1);
+		moves.remove(move);
+		Cell cell = move.getCell();
+		
+		cell.setPlayer(null);
+		cell.setCellState(CellState.EMPTY);
+		
+		nextPlayerMoveIndex -=1;
+		nextPlayerMoveIndex = (nextPlayerMoveIndex + players.size()) % players.size();
+		for(WinningStrategy w : winningStrategy) {
+			w.handleUndo(board, move);
+		}
+	}
+
 }
