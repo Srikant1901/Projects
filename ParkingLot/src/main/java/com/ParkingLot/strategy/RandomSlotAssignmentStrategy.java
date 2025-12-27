@@ -14,6 +14,10 @@ public class RandomSlotAssignmentStrategy implements SlotAssignmentStrategy{
 	
 	private ParkingLotRepository parkingLotRepository;
 	
+	public RandomSlotAssignmentStrategy() {
+		
+	}
+	
 	public RandomSlotAssignmentStrategy(ParkingLotRepository parkingLotRepository) {
 		this.parkingLotRepository = parkingLotRepository;
 	}
